@@ -1,0 +1,15 @@
+Section 4
+___________________
+Databases
+
+N+1 isseu = Clockwork 
+
+ return view('post.posts', [
+        'posts' => Post::with('category')->get() // gebruik GET ipv All() 
+    ]);
+    Hierdoor heb je minder query's te runnen
+Bekijk dit in Clockwork
+
+> sail artisan tinker
+Psy Shell v0.11.22 (PHP 8.2.11 — cli) by Justin Hileman
+> App\Models\Post::factory()->create();
